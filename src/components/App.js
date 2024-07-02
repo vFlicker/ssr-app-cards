@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { fetchAppsIfNeeded } from '../redux/actions'
+import { fetchAppsIfNeeded } from '../store/actions'
 import { Card } from './Card/Card'
 
 class App extends Component {
@@ -35,6 +35,8 @@ class App extends Component {
 const mapStateToProps = ({ isFetching, apps }) => ({
   isFetching,
   apps,
-})
+});
 
-export default connect(mapStateToProps, { fetchAppsIfNeeded })(App)
+const mapDispatchToProps = { fetchAppsIfNeeded }
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

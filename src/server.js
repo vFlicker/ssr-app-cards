@@ -1,16 +1,13 @@
 import React from 'react'
 import { renderToString } from 'react-dom/server'
-
 import { Provider } from 'react-redux'
-import configureStore from './redux/configureStore'
+
+import { configureStore } from './configureStore'
 import App from './components/App'
 
-
 module.exports = function render(initialState) {
-  // Configure the store with the initial state provided
   const store = configureStore(initialState)
 
-  // render the App store static markup ins content variable
   const content = renderToString(
     <Provider store={store} >
       <App />
