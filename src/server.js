@@ -3,7 +3,7 @@ import { renderToString } from 'react-dom/server'
 
 import { Provider } from 'react-redux'
 import configureStore from './redux/configureStore'
-import App from './components/app'
+import App from './components/App'
 
 
 module.exports = function render(initialState) {
@@ -17,7 +17,7 @@ module.exports = function render(initialState) {
     </Provider>
   );
 
-  // Get a copy of store data to create the same store on client side 
+  // Get a copy of store data to create the same store on client side
   const preloadedState = store.getState()
 
   return { content, preloadedState };
