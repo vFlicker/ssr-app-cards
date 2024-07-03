@@ -1,10 +1,10 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import { configureStore } from './configureStore'
-import App from './components/app'
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
 
-// Create a fresh store
+import { configureStore } from './configureStore';
+import App from './components/App';
+
 const store = configureStore()
 
 render(
